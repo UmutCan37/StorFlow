@@ -1,0 +1,75 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+@await Component.InvokeAsync("_HeadDashboardComponentPartial")
+<body>
+    <div class="container-scroller">
+        <!-- partial:partials/_navbar.html -->
+        
+        @await Component.InvokeAsync("_NavbarDashboardComponentPartial")
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:partials/_settings-panel.html -->
+            @await Component.InvokeAsync("_ThemeSettingsWrapperDashboardComponentPartial")
+
+
+            @await Component.InvokeAsync("_RightSidebarDashboardComponentPartial")
+            
+            <!-- partial -->
+            <!-- partial:partials/_sidebar.html -->
+            @await Component.InvokeAsync("_SidebarDashboardComponentPartial")
+            
+            <!-- partial -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="page-header">
+                        <h3 class="page-title">
+                            Dashboard
+                        </h3>
+                    </div>
+                    @await Component.InvokeAsync("_CardStatisticsDashboardComponentPartial")
+                    
+
+                    @await Component.InvokeAsync("_ChartDashboardComponentPartial")
+                    
+                    <div class="row">
+                        
+                        @await Component.InvokeAsync("_SalesStatusDashboardComponentPartial")
+
+                        @await Component.InvokeAsync("_ActivityDashboardComponentPartial")
+                        
+                        @await Component.InvokeAsync("_DailySalesDashboardComponentPartial")
+                    </div>
+                    @await Component.InvokeAsync("_Last5MessagesDashboardComponentPartial")
+                    
+                    <div class="row">
+                        @await Component.InvokeAsync("_SalesDataDashboardComponentPartial")
+                        
+                        
+                    </div>
+                    <div class="row">
+                        @await Component.InvokeAsync("_ToDoDashboardComponentPartial")
+                        @await Component.InvokeAsync("_Last5ProductstDashboardComponentPartial")
+                    </div>
+                    
+                <!-- content-wrapper ends -->
+                <!-- partial:partials/_footer.html -->
+                @await Component.InvokeAsync("_LayoutFooterComponentPartial")
+                <!-- partial -->
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    @await Component.InvokeAsync("_LayoutScriptsComponentPartial")
+</body>
+
+
+</html>
+
